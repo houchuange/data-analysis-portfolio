@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+
+# 原始数据不入库（121MB），跑一次 scripts/fetch_data.py 就有
+02-ecommerce-sql/data/*.csv
+02-ecommerce-sql/data/*.zip
