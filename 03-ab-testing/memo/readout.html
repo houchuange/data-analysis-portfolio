@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>实验结论 · Cookie Cats 新手引导门槛</title>
+<style>
+:root{
+  --ink:#191919; --mid:#4A4A4A; --light:#7A7A7A; --rule:#D6D2CB;
+  --accent:#7A2E2E; --paper:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Georgia,"Times New Roman","Songti SC","SimSun",serif;
+  color:var(--ink); background:#EDEBE6; font-size:15px; line-height:1.72;
+}
+.sheet{max-width:780px;margin:0 auto;background:var(--paper);padding:64px 76px 72px}
+
+/* 报头 */
+.masthead{display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:2px solid var(--ink);padding-bottom:10px}
+.masthead .label{font-family:"Helvetica Neue",Arial,sans-serif;font-size:10.5px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--light)}
+.masthead .no{font-family:"Helvetica Neue",Arial,sans-serif;font-size:10.5px;
+  letter-spacing:.1em;color:var(--light)}
+
+h1{font-size:24px;font-weight:700;line-height:1.35;margin:26px 0 4px;letter-spacing:-.01em}
+.deck{font-size:14px;color:var(--mid);font-style:italic;margin-bottom:26px}
+
+/* 公文抬头 */
+.meta{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:30px}
+.meta th{
+  font-family:"Helvetica Neue",Arial,sans-serif;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--light);font-weight:400;text-align:left;
+  width:86px;padding:5px 0;vertical-align:top
+}
+.meta td{padding:5px 0;border-bottom:1px solid #F0EEE9;vertical-align:top}
+.meta tr:last-child td{border-bottom:none}
+.meta .verdict{color:var(--accent);font-weight:700}
+
+h2{font-size:16px;font-weight:700;margin:34px 0 10px;padding-top:12px;
+  border-top:1px solid var(--rule);letter-spacing:.01em}
+h2 span.n{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;color:var(--light);
+  font-weight:400;margin-right:10px;letter-spacing:.08em}
+h3{font-size:14px;font-weight:700;margin:22px 0 6px}
+p{margin-bottom:12px;color:var(--mid)}
+p strong{color:var(--ink)}
+em{font-style:italic}
+ul{margin:0 0 14px 0;padding-left:20px;color:var(--mid)}
+li{margin-bottom:7px}
+
+table.data{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0 10px;
+  border-top:1.4px solid var(--ink);border-bottom:1.4px solid var(--ink)}
+table.data th{
+  text-align:left;font-family:"Helvetica Neue",Arial,sans-serif;font-size:10.5px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--light);font-weight:400;
+  padding:7px 6px;border-bottom:1px solid var(--rule);white-space:nowrap
+}
+table.data td{padding:7px 6px;border-bottom:1px solid #F2F0EC;color:var(--mid)}
+table.data tr:last-child td{border-bottom:none}
+table.data td.n,table.data th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.data td.bad{color:var(--accent);font-weight:700}
+.note{font-size:11.5px;color:var(--light);line-height:1.6;margin:-2px 0 18px}
+
+figure{margin:20px 0 22px}
+figure img{width:100%;display:block}
+figcaption{font-size:11.5px;color:var(--light);margin-top:7px;line-height:1.55;font-style:italic}
+figure.half{max-width:62%}
+figure.small{max-width:56%}
+figure.mid{max-width:84%}
+
+.callout{border:1px solid var(--ink);padding:16px 20px;margin:18px 0}
+.callout .k{font-family:"Helvetica Neue",Arial,sans-serif;font-size:10.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.callout p{margin-bottom:8px}
+.callout p:last-child{margin-bottom:0}
+
+blockquote{border-left:2px solid var(--rule);padding-left:16px;margin:14px 0;
+  color:var(--mid);font-size:14px}
+
+.backmatter{margin-top:40px;padding-top:12px;border-top:1px solid var(--rule);
+  font-size:11px;color:var(--light);line-height:1.7}
+
+@media print{
+  @page{size:A4;margin:15mm 15mm 13mm}
+  body{background:#fff;font-size:10.6px;line-height:1.62}
+  .sheet{padding:0;max-width:none}
+  h1{font-size:19px;margin:14px 0 3px}
+  .deck{font-size:11px;margin-bottom:14px}
+  .masthead{padding-bottom:6px}
+  .meta{font-size:9.6px;margin-bottom:16px}
+  .meta th{width:74px;padding:3px 0}
+  .meta td{padding:3px 0}
+  h2{font-size:12.4px;margin:20px 0 7px;padding-top:8px;page-break-after:avoid}
+  h3{font-size:11px;margin:14px 0 4px;page-break-after:avoid}
+  p{margin-bottom:7px}
+  table.data{font-size:9.4px;margin:10px 0 6px}
+  table.data th{padding:4px 5px}
+  table.data td{padding:4px 5px}
+  figure{margin:12px 0 14px;page-break-inside:avoid}
+  figcaption{font-size:9px;margin-top:4px}
+  .callout{padding:11px 14px;margin:12px 0;page-break-inside:avoid}
+  .backmatter{font-size:8.6px;margin-top:22px}
+  li{margin-bottom:4px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div class="label">Experiment Readout</div>
+    <div class="no">CC-GATE-2026-11</div>
+  </div>
+
+  <h1>新手引导门槛：第 30 关，还是第 40 关</h1>
+  <div class="deck">三消手游 Cookie Cats 的第一道付费门位置测试，90,189 名新玩家</div>
+
+  <table class="meta">
+    <tr><th>致</th><td>新手引导产品组</td></tr>
+    <tr><th>自</th><td>侯传阁（数据分析）</td></tr>
+    <tr><th>日期</th><td>2026-11-23</td></tr>
+    <tr><th>事由</th><td>gate_30 → gate_40 的 A/B 实验结果与上线建议</td></tr>
+    <tr><th>数据</th><td>Tactile Entertainment 公开实验数据，90,189 名新玩家（A 组 44,700 / B 组 45,489）</td></tr>
+    <tr><th>结论</th><td class="verdict">不上线。7 日留存显著下降 0.82 个百分点，没有对冲证据。</td></tr>
+  </table>
+
+  <h2><span class="n">1</span>背景与假设</h2>
+  <p>
+    玩家推进到某一关会撞上第一道门：等一段时间，或者付费直接过。线上版本把这道门放在第 30 关。
+    产品组的假设是，把它推到第 40 关、多给 10 关免费内容，新手期的挫败感会低一些，
+    第二天和第七天回来的概率应该更高。代价是首次付费触点被推后，短期收入可能下滑。
+  </p>
+  <p>
+    实验按新玩家随机分流：A 组 gate_30（对照），B 组 gate_40（实验）。
+    这个读数的任务是判断留存上的差异是否真实存在，以及在什么前提下这个判断会失效。
+  </p>
+
+  <h3>指标分工</h3>
+  <table class="data">
+    <thead><tr><th>层级</th><th>指标</th><th class="n">A 组</th><th class="n">B 组</th><th>选它的理由</th></tr></thead>
+    <tbody>
+      <tr><td>主指标</td><td><code>retention_7</code></td><td class="n">19.02%</td><td class="n">18.20%</td>
+          <td>7 天跨过一次内容消耗周期，比 1 日更难被新鲜感污染</td></tr>
+      <tr><td>护栏</td><td><code>retention_1</code></td><td class="n">44.82%</td><td class="n">44.23%</td>
+          <td>门往后推最可能伤首日体验，必须有指标盯着</td></tr>
+      <tr><td>辅助</td><td><code>sum_gamerounds</code></td><td class="n">52.46</td><td class="n">51.30</td>
+          <td>解释机制：留存变了，是玩多了还是玩少了</td></tr>
+    </tbody>
+  </table>
+
+  <h2><span class="n">2</span>先算能看见多大的差异</h2>
+  <p>
+    这个样本量能检出的最小差异是 <strong>7 日留存 0.73 pp</strong>（相对 3.84%）、
+    <strong>1 日留存 0.93 pp</strong>（相对 2.08%），双侧 α=0.05、power=0.80。
+    读后面每一个 p 值都要带着这句话：观测差异小于检出下限时，"不显著"只说明证据不足。
+  </p>
+  <table class="data">
+    <thead><tr><th>想检出的绝对差异</th><th class="n">相对幅度</th><th class="n">每组需要</th><th class="n">总计</th></tr></thead>
+    <tbody>
+      <tr><td>2.0 pp</td><td class="n">10.5%</td><td class="n">5,794</td><td class="n">11,588</td></tr>
+      <tr><td>1.0 pp</td><td class="n">5.3%</td><td class="n">23,685</td><td class="n">47,370</td></tr>
+      <tr><td>0.8 pp</td><td class="n">4.2%</td><td class="n">37,164</td><td class="n">74,328</td></tr>
+      <tr><td>0.5 pp</td><td class="n">2.6%</td><td class="n">95,734</td><td class="n">191,468</td></tr>
+    </tbody>
+  </table>
+  <div class="note">基线取 A 组 7 日留存 19.02%；本次实测差异 0.82 pp 落在第三行与第四行之间。</div>
+
+  <figure class="small">
+    <img src="../charts/03_power_curve.png" alt="功效曲线">
+    <figcaption>功效曲线：每组样本量与 80% 功效下可检出的最小绝对差异。橙点是本次实验（每组 44,700 人，0.73 pp）。</figcaption>
+  </figure>
+
+  <h2><span class="n">3</span>数据检查</h2>
+  <p>
+    五个字段，90,189 行，没有缺失、没有重复 userid、没有完全重复的行。首日轮次有一个极端值：
+    一位 A 组玩家玩了 49,854 轮（userid 6390605）。零轮次用户 A 组 4.33%、B 组 4.52%，两组接近。
+  </p>
+  <p>
+    分流比例对不上：A 49.56% / B 50.44%，χ² = 6.90，p = 0.0086，偏差 0.87 个百分点。
+    九万人的量级上，这个偏差足以让卡方检验报警。
+  </p>
+  <p>
+    <strong>怎么处理：不忽略，也不推翻实验。</strong>两组的留存率都是组内均值，人数比例本身不会机械地扭曲点估计；
+    真正的风险在分流机制——如果失衡和结果相关（例如高活跃用户更容易落进某一组），比较就带了选择偏倚。
+    这份数据只有 5 个字段，没有任何分流实现的信息，<strong>这个风险在这里无法检验，只能记录在案</strong>，
+    靠外部复现来排除。这也是本读数最需要读者知情的一条。
+  </p>
+
+  <h2><span class="n">4</span>结果</h2>
+  <table class="data">
+    <thead><tr><th>指标</th><th class="n">A 组</th><th class="n">B 组</th><th class="n">绝对差</th><th class="n">相对变化</th><th class="n">p</th><th class="n">95% CI（相对）</th></tr></thead>
+    <tbody>
+      <tr><td>7 日留存</td><td class="n">19.02%</td><td class="n">18.20%</td><td class="n bad">−0.82 pp</td><td class="n bad">−4.31%</td><td class="n">0.0016</td><td class="n">[−6.89%, −1.66%]</td></tr>
+      <tr><td>1 日留存</td><td class="n">44.82%</td><td class="n">44.23%</td><td class="n">−0.59 pp</td><td class="n">−1.32%</td><td class="n">0.0744</td><td class="n">[−2.74%, +0.13%]</td></tr>
+      <tr><td>首日轮次（均值）</td><td class="n">52.46</td><td class="n">51.30</td><td class="n">−1.16</td><td class="n">−2.21%</td><td class="n">0.3759</td><td class="n">[−4.13, +0.98]</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    留存用两比例 z 检验（合并方差），轮次用 Welch t 检验外加 4,000 次 bootstrap；
+    相对变化区间走 delta 法，比率区间用 Wilson / Newcombe，避开低发生率下 Wald 区间越界。
+  </div>
+
+  <figure>
+    <img src="../charts/01_effect_forest.png" alt="相对效应森林图">
+    <figcaption>三个指标的相对效应。只有 7 日留存的区间整段落在 0 左侧。</figcaption>
+  </figure>
+
+  <h3>4.1 主指标为负，且不算小</h3>
+  <p>
+    19.02% 对 18.20%，绝对差 −0.82 pp、相对 −4.31%，z = −3.16，p = 0.0016。
+    区间上沿是 −1.66%——<strong>取最乐观的一端，相对损失仍有 1.66%</strong>。
+    效应量 Cohen's h = −0.021，属于小效应；但对一个日活百万级的游戏，−0.82 pp 对应的用户规模不小。
+  </p>
+
+  <h3>4.2 1 日留存不显著，但不能读成"无影响"</h3>
+  <p>
+    44.82% 对 44.23%，差 −0.59 pp，p = 0.0744，区间跨 0。表面读法是两组一样，但这个读法是错的：
+    本次实验对 1 日留存的检出下限是 0.93 pp，观测到的 0.59 pp 还不到它。
+    这是证据不足，不是证据表明无差异。
+  </p>
+
+  <h3>4.3 首日轮次的均值被一个人绑架</h3>
+  <p>
+    均值 52.46 对 51.30，Welch p = 0.3759，看起来一样。但这个"一样"是巧合：
+    每组各去掉最大的一个观测，差值从 −1.16 轮缩到 −0.10 轮；中位数 17 对 16；
+    1% 截尾均值 45.11 对 44.83，差 −0.28 轮。
+    两个均值的差距几乎全部来自那位玩了 49,854 轮的玩家，不代表任何群体差异。
+  </p>
+  <p>
+    Mann-Whitney 的 p = 0.0502、秩二列相关 r = −0.0075——统计量擦到显著边缘，效应量小到可以忽略。
+    这是"统计显著不等于业务有意义"的教科书例子。
+  </p>
+
+  <figure class="half">
+    <img src="../charts/06_bayes.png" alt="7 日留存的贝叶斯后验">
+    <figcaption>Beta(1,1) 无信息先验下两组后验几乎不重叠，P(B 组低于 A 组) = 99.93%，期望损失 0.82 pp。换一套统计哲学，结论不变。</figcaption>
+  </figure>
+
+  <h2><span class="n">5</span>四个会让结论失效的坑</h2>
+
+  <h3>5.1 多重比较</h3>
+  <p>
+    三个指标同时检验、每个都用 α=0.05，至少撞上一个假阳性的概率是 1−0.95³ ≈ 14%。
+    Holm 校正后，7 日留存的 p 从 0.0016 抬到 0.0047，1 日留存从 0.0744 抬到 0.1488，
+    首日轮次不变。判定没变，但这正是校正该做的事：让"多个指标里挑一个显著的"没法蒙混过关。
+  </p>
+
+  <h3>5.2 长尾指标</h3>
+  <p>
+    轮次中位数 17，99 分位 135，最大值 49,854。这类分布上，均值不是"平均用户"，
+    而是"平均用户 + 一个异常玩家的放大"。口径换成截尾均值、中位数或 bootstrap，三种结论一致：
+    两组首日参与度没有实质差异。
+  </p>
+
+  <h3>5.3 事后分层</h3>
+  <figure>
+    <img src="../charts/04_segments.png" alt="按首日活跃分层的留存差">
+    <figcaption>按首日活跃层级分段的 7 日留存差。50 局以上下降 2.57 pp，1–5 局的轻度玩家反而"上升" 0.15 pp。</figcaption>
+  </figure>
+  <p>
+    只挑"1–5 局"这一层来汇报，完全可以写出"实验对轻度玩家有正向作用"——这是 p-hacking 最日常的形态：
+    不是造数据，是挑一个对自己有利的切法。两个理由拒绝它：其一，版本 × 层级的交互项 p = 0.42，
+    方向差异本身在噪声范围内；其二，更根本的，<code>sum_gamerounds</code> 是<strong>实验之后</strong>才产生的变量，
+    按它分层等于按结果分层，会引入选择偏倚（collider bias），这一层的"提升"没有因果含义。
+  </p>
+  <p>
+    顺带回答经典陷阱：这次分层里没有出现完整的辛普森反转（整体与各层方向全部相反），
+    但已经有了方向不一致的苗头。如果数据里真有前置协变量，正确处理是分层随机化或 CUPED 做方差缩减，
+    不是事后切开看。
+  </p>
+
+  <h3>5.4 连续监测</h3>
+  <figure class="half">
+    <img src="../charts/05_peeking.png" alt="连续监测次数与假阳性率">
+    <figcaption>零假设成立时，"看了 k 次、任一时刻显著就停"的假阳性率。2,000 次置换模拟，只取决于看了几次。</figcaption>
+  </figure>
+  <p>
+    把实验标签随机打乱 2,000 次，人为制造"两组真的没差异"的世界，再模拟每天看一次、看到显著就停：
+    只看 1 次假阳性率 5.9%，看满 10 次涨到 20.6%，是名义水平的四倍。
+    产品团队几乎一定会每天看数据，所以要么提前约定固定样本量和观察窗口，要么用序贯检验
+    （alpha spending、mSPRT）把"多次看"这件事本身纳入设计。<strong>先跑够，再看，是最便宜的一条纪律。</strong>
+  </p>
+
+  <h2><span class="n">6</span>决策</h2>
+  <div class="callout">
+    <span class="k">Recommendation</span>
+    <p><strong>不上线 gate_40，保留 gate_30。</strong></p>
+    <p>
+      主指标 7 日留存显著下降 0.82 pp（相对 −4.31%，p=0.0016，Holm 校正后 0.0047），方向明确为负；
+      1 日留存与首日轮次没有提供任何能抵消这一损失的正向证据；贝叶斯后验给出 P(B 更差) = 99.93%。
+    </p>
+  </div>
+
+  <h3>如果还要再试一次</h3>
+  <ul>
+    <li>不要一次跳 10 关。把门槛做成梯度（30 / 35 / 40），一次实验估计剂量反应，而不是两次两两比较。</li>
+    <li>主指标锁 7 日留存，样本量按 0.5 pp 设计：每组约 95,734 人。</li>
+    <li>必须带时间戳。没有时间维度，新奇效应、周内效应、效应是否随时间衰减，全都无法检验。</li>
+    <li>分流前记录设备和渠道，才能查 SRM 的来源，也才能做 CUPED。</li>
+  </ul>
+
+  <h2><span class="n">7</span>这份结论的边界</h2>
+  <ul>
+    <li><strong>没有时间戳，新奇效应无法检验。</strong>留存差异可能来自真实体验，也可能只是"门变远了"带来的短期新鲜感。
+      判断后者需要按实验天数切分的留存曲线，这份数据给不了。</li>
+    <li><strong>没有前置协变量，做不了 CUPED。</strong>无法在不增大样本的前提下提高灵敏度。</li>
+    <li><strong>分流机制不可见。</strong>SRM 已经报警（p = 0.0086），但 5 个字段无法定位原因，也无法证明失衡与结果无关。</li>
+    <li><strong>只看留存，没看收入。</strong>如果 gate_40 显著提升了付费转化或 ARPU，留存损失有可能被部分抵消。
+      缺收入数据，这个权衡无法完成——这是本次结论最大的适用边界。</li>
+    <li><strong>窗口只有 7 天，单一游戏、单一市场。</strong>30 日留存与长期付费不在观测范围内，
+      结论也不能外推到其他品类。</li>
+  </ul>
+
+  <div class="backmatter">
+    复现：<code>python src/fetch.py</code>（下载 + SHA-256 校验 5ab54d76…342c46bd）→
+    <code>python src/analysis.py</code>（全部统计检验，输出 data/metrics.json）→
+    <code>python src/charts.py</code> → <code>python src/build_memo.py</code>（生成本文档的 PDF）。
+    随机种子 20261123，全部数字可从 metrics.json 追溯。
+  </div>
+
+</div>
+</body>
+</html>
