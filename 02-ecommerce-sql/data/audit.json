@@ -1,0 +1,206 @@
+{
+  "row_counts": {
+    "orders": 99441,
+    "customers": 99441,
+    "order_items": 112650,
+    "payments": 103886,
+    "reviews": 99224,
+    "products": 32951,
+    "sellers": 3095,
+    "cat_tr": 71
+  },
+  "dup_pk": {
+    "dup_order": 0,
+    "dup_customer": 0,
+    "dup_product": 0,
+    "dup_seller": 0,
+    "dup_review": 814
+  },
+  "nulls": {
+    "approved_null": 160,
+    "carrier_null": 1783,
+    "delivered_null": 2965,
+    "estimated_null": 0,
+    "customer_null": 0
+  },
+  "order_item_orphan": {
+    "order_no_item": 775,
+    "item_no_order": 0
+  },
+  "payment_mismatch": {
+    "compared": 99441,
+    "mismatch": 1153,
+    "max_gap": 3782.19
+  },
+  "review_multi": {
+    "orders_reviewed": 98673,
+    "multi": 547
+  },
+  "id_structure": {
+    "customer_ids": 99441,
+    "unique_persons": 96096,
+    "orders": 99441
+  },
+  "time_anomaly": {
+    "appr_before": 0,
+    "carrier_before": 1359,
+    "deliv_before_carrier": 23,
+    "deliv_before_purchase": 0,
+    "est_before_purchase": 0
+  },
+  "amount": {
+    "price_nonpos": 0,
+    "freight_neg": 0,
+    "min_price": 0.85,
+    "max_price": 6735.0
+  },
+  "status_dist": {
+    "delivered": 96478,
+    "shipped": 1107,
+    "canceled": 625,
+    "unavailable": 609,
+    "invoiced": 314,
+    "processing": 301,
+    "created": 5,
+    "approved": 2
+  },
+  "monthly": [
+    {
+      "month": "2016-09",
+      "orders": 4
+    },
+    {
+      "month": "2016-10",
+      "orders": 324
+    },
+    {
+      "month": "2016-12",
+      "orders": 1
+    },
+    {
+      "month": "2017-01",
+      "orders": 800
+    },
+    {
+      "month": "2017-02",
+      "orders": 1780
+    },
+    {
+      "month": "2017-03",
+      "orders": 2682
+    },
+    {
+      "month": "2017-04",
+      "orders": 2404
+    },
+    {
+      "month": "2017-05",
+      "orders": 3700
+    },
+    {
+      "month": "2017-06",
+      "orders": 3245
+    },
+    {
+      "month": "2017-07",
+      "orders": 4026
+    },
+    {
+      "month": "2017-08",
+      "orders": 4331
+    },
+    {
+      "month": "2017-09",
+      "orders": 4285
+    },
+    {
+      "month": "2017-10",
+      "orders": 4631
+    },
+    {
+      "month": "2017-11",
+      "orders": 7544
+    },
+    {
+      "month": "2017-12",
+      "orders": 5673
+    },
+    {
+      "month": "2018-01",
+      "orders": 7269
+    },
+    {
+      "month": "2018-02",
+      "orders": 6728
+    },
+    {
+      "month": "2018-03",
+      "orders": 7211
+    },
+    {
+      "month": "2018-04",
+      "orders": 6939
+    },
+    {
+      "month": "2018-05",
+      "orders": 6873
+    },
+    {
+      "month": "2018-06",
+      "orders": 6167
+    },
+    {
+      "month": "2018-07",
+      "orders": 6292
+    },
+    {
+      "month": "2018-08",
+      "orders": 6512
+    },
+    {
+      "month": "2018-09",
+      "orders": 16
+    },
+    {
+      "month": "2018-10",
+      "orders": 4
+    }
+  ],
+  "nondelivered": [
+    {
+      "status": "shipped",
+      "n": 1107,
+      "has_deliv": 0
+    },
+    {
+      "status": "canceled",
+      "n": 625,
+      "has_deliv": 6
+    },
+    {
+      "status": "unavailable",
+      "n": 609,
+      "has_deliv": 0
+    },
+    {
+      "status": "invoiced",
+      "n": 314,
+      "has_deliv": 0
+    },
+    {
+      "status": "processing",
+      "n": 301,
+      "has_deliv": 0
+    },
+    {
+      "status": "created",
+      "n": 5,
+      "has_deliv": 0
+    },
+    {
+      "status": "approved",
+      "n": 2,
+      "has_deliv": 0
+    }
+  ]
+}

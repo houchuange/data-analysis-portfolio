@@ -1,0 +1,7 @@
+﻿payment_type,orders,avg_hours_to_approve,median_hours
+credit_card,74007,4.4,0.0
+boleto,19721,33.1,29.0
+voucher,1596,9.5,1.0
+debit_card,1525,9.5,1.0
+credit_card/voucher,1183,5.9,0.0
+voucher/credit_card,1057,6.0,0.0
