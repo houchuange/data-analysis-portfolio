@@ -37,6 +37,10 @@ jobs:
         with:
           path: 02-ecommerce-sql/docs
 
+      # 产物刚 finalize 时 list artifacts 还查不到，等 API 追上再部署
+      - name: Wait for artifact to register
+        run: sleep 20
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5
