@@ -24,6 +24,21 @@ python scripts/make_charts.py    # 出图（只读 results/，不重算）
 4. **履约链路很干净**（全长损耗 2.92%），问题不在丢单，在送达质量。
 5. **晚到 4 天的单，平均评分从 4.04 掉到 2.11**；6.67% 的晚到订单制造了 32.6% 的差评。
 
+## 交互看板
+
+![看板总览](docs/assets/overview.png)
+
+[`docs/index.html`](docs/index.html)：单文件、ECharts、双击即开。六个指标、四个筛选器，切换后全部图表重算。
+
+![筛选联动](docs/assets/demo.gif)
+
+阿拉戈斯州、只看晚到单——晚到率 21.5% 的州，评分从 4.16 掉到 1.96：
+
+![筛选后](docs/assets/filtered.png)
+
+看板数据由 `python scripts/build_dashboard_data.py` 从 `results/` 的聚合结果拼成月 × 州 × 品类立方体，
+再内联进 `index.html`。
+
 ## 表
 
 | 表 | 行数 | 粒度 |
