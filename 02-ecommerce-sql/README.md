@@ -28,7 +28,9 @@ python scripts/make_charts.py    # 出图（只读 results/，不重算）
 
 ![看板总览](docs/assets/overview.png)
 
-[`docs/index.html`](docs/index.html)：单文件、ECharts、双击即开。六个指标、四个筛选器，切换后全部图表重算。
+线上地址：https://houchuange.github.io/data-analysis-portfolio/
+
+单文件 [`docs/index.html`](docs/index.html)，ECharts，双击即开。六个指标、四个筛选器，切换后全部图表重算。
 
 ![筛选联动](docs/assets/demo.gif)
 
